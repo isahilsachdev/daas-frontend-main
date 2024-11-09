@@ -38,11 +38,11 @@ const Signup = () => {
 
   return (
     <OnboardingFormLayout>
-      <form onSubmit={handleSubmit} className={styles.signupContainer}>
-        <div className={styles.signupHeading}>
+      <form onSubmit={handleSubmit} className={styles.formContainer}>
+        <div className={styles.formHeading}>
           <Typography textType='h4' text='Sign up for free' />
         </div>
-        <div className={styles.signupMiddleContainer}>
+        <div className={styles.formMiddleContainer}>
           <GoogleOauthBtn />
           <div>
             <DividerWithText />
@@ -68,7 +68,7 @@ const Signup = () => {
             <Button type="submit" variant='secondary'>Create account</Button>
           </div>
         </div>
-        <div className={styles.signupFooter}>
+        <div className={styles.formFooter}>
           <div>
             <Typography textType='small-regular' text='Already have an account?' />
           </div>
