@@ -1,0 +1,52 @@
+.formContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    .formHeading {
+        font-family: 'Cabinet Grotesk', sans-serif !important;
+    }
+
+    .formMiddleContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        width: 100%;
+        border: 1px solid white;
+
+        >div {
+            width: 100%;
+        }
+
+        .OtpInput{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            border: 2px solid white;
+        }
+
+        .buttonCombo {
+            display: flex;
+            gap: 12px;
+
+            .btnBack {
+                width: 74px;
+                border: 1px solid white;
+                // flex: 1;
+            }
+
+            .btnContinue {
+                // flex: 3;
+                background-color: grey;
+                color: aqua;
+            }
+        }
+    }
+
+    .formFooter {
+        text-align: center;
+    }
+}
