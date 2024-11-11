@@ -9,12 +9,14 @@ import DividerWithText from '@/app/components/DividerWithText/DividerWithText';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { z } from 'zod';
+import { useRouter } from 'next/navigation';
 
 const emailSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
 });
 
 const Signup = () => {
+  const router = useRouter()
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
 
@@ -33,6 +35,7 @@ const Signup = () => {
       setError('');
       // Proceed with the signup logic if email is valid
       console.log("Email submitted:", email);
+      router.push("/onboarding-details")
     }
   };
 
