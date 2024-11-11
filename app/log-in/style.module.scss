@@ -1,0 +1,10 @@
+.onboardingLandingPage {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .headerContainer {
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
