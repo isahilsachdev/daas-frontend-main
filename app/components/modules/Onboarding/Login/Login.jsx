@@ -14,7 +14,7 @@ const emailSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
 });
 
-const Signup = () => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
 
@@ -31,7 +31,7 @@ const Signup = () => {
       setError(result.error.errors[0].message); // Display the error message from Zod
     } else {
       setError('');
-      // Proceed with the signup logic if email is valid
+      // Proceed with the Login logic if email is valid
       console.log("Email submitted:", email);
     }
   };
@@ -40,7 +40,7 @@ const Signup = () => {
     <OnboardingFormLayout>
       <form onSubmit={handleSubmit} className={styles.formContainer}>
         <div className={styles.formHeading}>
-          <Typography textType='h4' text='Sign up for free' />
+          <Typography textType='h4' text='Welcome Back' />
         </div>
         <div className={styles.formMiddleContainer}>
           <GoogleOauthBtn />
@@ -65,7 +65,7 @@ const Signup = () => {
             )}
           </div>
           <div>
-            <Button type="submit" variant='secondary'>Continue</Button>
+            <Button disabled type="submit" variant='secondary'>Continue</Button>
           </div>
         </div>
         <div className={styles.formFooter}>
@@ -81,4 +81,4 @@ const Signup = () => {
   );
 }
 
-export default Signup;
+export default Login;

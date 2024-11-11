@@ -3,8 +3,8 @@
 import React from 'react';
 
 import styles from './styles.module.scss';
-import Signup from '../components/modules/Onboarding/Signup/Signup';
 import OnboardingHeader from '../components/modules/Onboarding/OnboardingHeader/OnboardingHeader';
+import Login from '../components/modules/Onboarding/Login/Login';
 
 const OnboardingSignup = () => {
   return (
@@ -13,7 +13,7 @@ const OnboardingSignup = () => {
         <OnboardingHeader />
       </div>
       <div>
-        {/* <Signup /> */}
+        <Login />
       </div>
     </div>
   );
