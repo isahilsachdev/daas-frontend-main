@@ -17,7 +17,9 @@ import { Option } from 'lucide-react';
 import OTPInput from '@/app/components/OTPInput/OTPInput';
 
 const otpSchema = z.object({
-    otp: z.string().email("Please enter a valid email address"),
+    otp: z.string()
+        .length(6, "OTP must be 6 digits")
+        .regex(/^\d{6}$/, "OTP must contain only numbers"),
 });
 
 const OTP = () => {
@@ -37,7 +39,7 @@ const OTP = () => {
             setError(result.error.errors[0].message); // Display the error message from Zod
         } else {
             setError('');
-            // Proceed with the otp logic if email is valid
+            // Proceed with the otp logic if the OTP is valid
             console.log("OTP submitted:", otp);
         }
     };
