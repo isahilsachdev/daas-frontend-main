@@ -15,9 +15,9 @@ const onboardingDetails = () => {
         <OnboardingHeader />
       </div>
       <div>
-        {/* <OTP /> */}
+        <OTP />
         {/* <KnowYourScreen/> */}
-        <VerifyingAccountScreen/>
+        {/* <VerifyingAccountScreen/> */}
       </div>
     </div>
   );

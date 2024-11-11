@@ -15,7 +15,6 @@
         align-items: center;
         gap: 40px;
         width: 100%;
-        border: 1px solid white;
 
         >div {
             width: 100%;
@@ -25,7 +24,6 @@
             width: 100%;
             display: flex;
             justify-content: space-around;
-            border: 2px solid white;
         }
 
         .buttonCombo {
@@ -40,8 +38,6 @@
 
             .btnContinue {
                 // flex: 3;
-                background-color: grey;
-                color: aqua;
             }
         }
     }

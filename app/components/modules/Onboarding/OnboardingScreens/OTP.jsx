@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/input-otp"
 import { Option } from 'lucide-react';
 
-
 const otpSchema = z.object({
     otp: z.string().email("Please enter a valid email address"),
 });
@@ -75,14 +74,12 @@ const OTP = () => {
                         )}
                     </div>
                     <div className={styles.buttonCombo}>
-                        <Button type="submit" variant='default' className={styles.btnBack}>Back</Button>
-                        <Button type="submit" variant='ghost' className={styles.btnContinue}>Continue</Button>
+                        <Button variant='outline'>Back</Button>
+                        <Button type="submit" variant='secondary'>Continue</Button>
                     </div>
                 </div>
                 <div className={styles.formFooter}>
-                    <div>
-                        <Typography textType='small-regular' text='By signing up, you agree to out Terms of Use, Privacy Notice and Cookie Notice.' />
-                    </div>
+                    <Typography color='#FFFFFF8F' textType='micro-regular' text='By signing up, you agree to out Terms of Use, Privacy Notice and Cookie Notice.' />
                 </div>
             </form>
         </OnboardingFormLayout>
