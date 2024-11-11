@@ -27,16 +27,26 @@ const OTPInput = ({ length = 6, onComplete }) => {
         }
     };
 
+    const handlePaste = (e) => {
+        const pastedData = e.clipboardData.getData('Text').slice(0, length).replace(/[^0-9]/g, '');
+        
+        if (pastedData.length === length) {
+            const newOtp = pastedData.split('');
+            setOtp(newOtp);
+            onComplete(newOtp.join(''));
+        }
+    };
+
     return (
-        <div className={styles.container}>
-            {otp.map((_, index) => (
+        <div className={styles.container} onPaste={handlePaste}>
+            {otp.map((value, index) => (
                 <input
                     placeholder='0'
                     key={index}
                     id={`otp-${index}`}
                     type="text"
                     maxLength="1"
-                    value={otp[index]}
+                    value={value}
                     onChange={(e) => handleChange(e.target, index)}
                     onKeyDown={(e) => handleBackspace(e, index)}
                     className={styles.input}
