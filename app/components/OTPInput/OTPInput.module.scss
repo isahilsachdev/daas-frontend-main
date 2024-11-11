@@ -10,9 +10,21 @@
 .input {
     width: 56px;
     height: 56px;
-    font-size: 24px;
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38.4px;
     text-align: center;
-    border-radius: 8px;
     background-color: #222;
-    outline: none;
+    border-radius: 8px;
+    color: #fff;
+
+    &::placeholder {
+        color: #5A5A5F; // i want to use when is in 0's state
+        font-family: 'Cabinet Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 38.4px;
+        text-align: center;
+    }
 }
