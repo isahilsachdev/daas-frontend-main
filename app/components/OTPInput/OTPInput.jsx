@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './OTPInput.module.scss';
 
-const OTPInput = ({ length = 6, onComplete }) => {
+const OTPInput = ({ length = 6, onChange }) => {
     const [otp, setOtp] = useState(Array(length).fill(''));
 
     const handleChange = (element, index) => {
@@ -12,12 +12,11 @@ const OTPInput = ({ length = 6, onComplete }) => {
         newOtp[index] = value;
         setOtp(newOtp);
 
+        // Notify parent of OTP change
+        onChange(newOtp.join(''));
+
         if (value && index < length - 1) {
             document.getElementById(`otp-${index + 1}`).focus();
-        }
-
-        if (newOtp.every((digit) => digit !== '')) {
-            onComplete(newOtp.join(''));
         }
     };
 
@@ -29,13 +28,10 @@ const OTPInput = ({ length = 6, onComplete }) => {
 
     const handlePaste = (e) => {
         const pastedData = e.clipboardData.getData('Text').slice(0, length).replace(/[^0-9]/g, '');
-
         if (pastedData.length === length) {
             const newOtp = pastedData.split('');
             setOtp(newOtp);
-            onComplete(newOtp.join(''));
-
-            // Move focus to the last input box
+            onChange(newOtp.join('')); // Notify parent of OTP change
             document.getElementById(`otp-${length - 1}`).focus();
         }
     };
