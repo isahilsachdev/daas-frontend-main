@@ -14,6 +14,7 @@ import {
     InputOTPSlot,
 } from "@/components/ui/input-otp"
 import { Option } from 'lucide-react';
+import OTPInput from '@/app/components/OTPInput/OTPInput';
 
 const otpSchema = z.object({
     otp: z.string().email("Please enter a valid email address"),
@@ -52,21 +53,8 @@ const OTP = () => {
                 </div>
                 <div className={styles.formMiddleContainer}>
                     <div className={styles.OtpInput}>
-                        <InputOTP
-                            maxLength={6}
-                            value={otp}
-                            onChange={(value) => setOtp(value)}
-                            className=""
-                        >
-                            <InputOTPGroup className="">
-                                <InputOTPSlot index={0} />
-                                <InputOTPSlot index={1} />
-                                <InputOTPSlot index={2} />
-                                <InputOTPSlot index={3} />
-                                <InputOTPSlot index={4} />
-                                <InputOTPSlot index={5} />
-                            </InputOTPGroup>
-                        </InputOTP>
+                        <OTPInput length={6} onComplete={(otp) => console.log('Entered OTP:', otp)} />
+
                         {error && (
                             <p id="otp-error" className="mt-1 text-sm text-red-600">
                                 {error}
@@ -74,15 +62,19 @@ const OTP = () => {
                         )}
                     </div>
                     <div className={styles.buttonCombo}>
-                        <Button variant='outline'>Back</Button>
-                        <Button type="submit" variant='secondary'>Continue</Button>
+                        <div className={styles.btnBack}>
+                            <Button variant='outline'>Back</Button>
+                        </div>
+                        <div className={styles.btnContinue}>
+                            <Button type="submit" variant='secondary'>Continue</Button>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.formFooter}>
                     <Typography color='#FFFFFF8F' textType='micro-regular' text='By signing up, you agree to out Terms of Use, Privacy Notice and Cookie Notice.' />
                 </div>
-            </form>
-        </OnboardingFormLayout>
+            </form >
+        </OnboardingFormLayout >
     );
 }
 

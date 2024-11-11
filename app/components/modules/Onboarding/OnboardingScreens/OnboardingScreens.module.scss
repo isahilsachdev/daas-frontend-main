@@ -20,7 +20,7 @@
             width: 100%;
         }
 
-        .OtpInput{
+        .OtpInput {
             width: 100%;
             display: flex;
             justify-content: space-around;
@@ -32,11 +32,11 @@
 
             .btnBack {
                 width: 74px;
-                border: 1px solid white;
                 // flex: 1;
             }
 
             .btnContinue {
+                width: 100%;
                 // flex: 3;
             }
         }
