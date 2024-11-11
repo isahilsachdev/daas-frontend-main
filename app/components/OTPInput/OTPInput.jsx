@@ -29,11 +29,14 @@ const OTPInput = ({ length = 6, onComplete }) => {
 
     const handlePaste = (e) => {
         const pastedData = e.clipboardData.getData('Text').slice(0, length).replace(/[^0-9]/g, '');
-        
+
         if (pastedData.length === length) {
             const newOtp = pastedData.split('');
             setOtp(newOtp);
             onComplete(newOtp.join(''));
+
+            // Move focus to the last input box
+            document.getElementById(`otp-${length - 1}`).focus();
         }
     };
 
